@@ -1,4 +1,4 @@
-package schedule.mycalendar.entity;
+package schedule.mycalendar.entity.member;
 
 import lombok.AccessLevel;
 import lombok.Builder;
