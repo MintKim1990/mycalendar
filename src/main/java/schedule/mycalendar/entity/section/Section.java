@@ -1,12 +1,14 @@
-package schedule.mycalendar.entity.Section;
+package schedule.mycalendar.entity.section;
 
-import com.mysema.commons.lang.Assert;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Persistable;
 import schedule.mycalendar.entity.BaseEntity;
+import schedule.mycalendar.entity.achieve.DefaultAchievements;
+import schedule.mycalendar.entity.achieve.mapping.MemberAchievements;
+import schedule.mycalendar.request.section.SectionRequest;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -31,19 +33,33 @@ public class Section extends BaseEntity implements Persistable<String> {
     @OneToMany(mappedBy = "parentSection")
     private List<Section> childSection = new ArrayList<>();
 
+    @OneToOne(mappedBy = "memberAchievementsSection")
+    private MemberAchievements memberAchievements; // 사용자별 달성내용
+
+    @OneToMany(mappedBy = "defaultAchievementsSection")
+    private DefaultAchievements defaultAchievements; // 달성내용
+
     /**
      * 기본생성자
      * @param code
      * @param name
      */
     @Builder
-    public Section(String code, String name) {
-
-        Assert.hasText(code, "세션 코드는 필수입니다.");
-        Assert.hasText(name, "세션 이름은 필수입니다.");
-
+    private Section(String code, String name) {
         this.code = code;
         this.name = name;
+    }
+
+    /**
+     * 섹션 생성
+     * @param request
+     * @return
+     */
+    public static Section createSection(SectionRequest request) {
+        return Section.builder()
+                .code(request.getCode())
+                .name(request.getName())
+                .build();
     }
 
     /**
@@ -79,5 +95,13 @@ public class Section extends BaseEntity implements Persistable<String> {
     @Override
     public boolean isNew() {
         return Objects.isNull(super.getCreatedDate());
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

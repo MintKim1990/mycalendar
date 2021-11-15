@@ -4,11 +4,12 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import schedule.mycalendar.entity.section.Section;
+import schedule.mycalendar.request.member.MemberRequest;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,8 +23,18 @@ public class Member {
     private String name;
 
     @Builder
-    public Member(Long id, String name) {
-        this.id = id;
+    private Member(String name) {
         this.name = name;
+    }
+
+    /**
+     * 회원 생성
+     * @param request
+     * @return
+     */
+    public static Member createMember(MemberRequest request) {
+        return Member.builder()
+                .name(request.getName())
+                .build();
     }
 }
