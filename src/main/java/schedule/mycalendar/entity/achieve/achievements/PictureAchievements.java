@@ -9,14 +9,14 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * 세부달성내용 시간
+ * 세부달성내용 사진
  */
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@DiscriminatorValue("Time")
-public class TimeAchievements extends DefaultAchievements {
+@DiscriminatorValue("Picture")
+public class PictureAchievements extends DefaultAchievements {
 
-    private int activeTime;
+    private String pictureName;
 
 }

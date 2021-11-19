@@ -6,8 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Persistable;
 import schedule.mycalendar.entity.BaseEntity;
-import schedule.mycalendar.entity.achieve.DefaultAchievements;
-import schedule.mycalendar.entity.achieve.mapping.MemberAchievements;
+import schedule.mycalendar.entity.achieve.member.MemberAchievements;
 import schedule.mycalendar.request.section.SectionRequest;
 
 import javax.persistence.*;
@@ -36,8 +35,6 @@ public class Section extends BaseEntity implements Persistable<String> {
     @OneToOne(mappedBy = "memberAchievementsSection")
     private MemberAchievements memberAchievements; // 사용자별 달성내용
 
-    @OneToMany(mappedBy = "defaultAchievementsSection")
-    private DefaultAchievements defaultAchievements; // 달성내용
 
     /**
      * 기본생성자
