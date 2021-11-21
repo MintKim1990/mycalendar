@@ -24,6 +24,8 @@ public abstract class CycleDetailAchievements {
     @JoinColumn(name = "cycle_achievements_id")
     private CycleAchievements cycleAchievements; // 주기별 달성내용
 
-
-
+    // 양방향 연관관계
+    public void setCycleAchievements(CycleAchievements cycleAchievements) {
+        this.cycleAchievements = cycleAchievements;
+    }
 }

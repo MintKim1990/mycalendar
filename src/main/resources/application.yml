@@ -1,7 +1,7 @@
 spring:
   datasource:
     #url: jdbc:h2:mem:test
-    url: jdbc:mysql://127.0.0.1:3306/mycalendar?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/mycalendar?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: root
     password: min7786220*
     driver-class-name: com.mysql.cj.jdbc.Driver
