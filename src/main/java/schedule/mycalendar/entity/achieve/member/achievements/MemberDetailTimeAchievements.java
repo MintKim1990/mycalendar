@@ -26,7 +26,7 @@ public class MemberDetailTimeAchievements extends MemberDetailAchievements {
         this.activeTime = activeTime;
     }
 
-    public static MemberDetailTimeAchievements createMemberDetailPictureAchievements(MemberDetailTimeAchievementsRequest memberDetailTimeAchievementsRequest) {
+    public static MemberDetailTimeAchievements createMemberDetailTimeAchievements(MemberDetailTimeAchievementsRequest memberDetailTimeAchievementsRequest) {
 
         if(memberDetailTimeAchievementsRequest.getActiveTime() < 0 || memberDetailTimeAchievementsRequest.getActiveTime() > 24)
             throw new IllegalArgumentException("목표시간은 24시간 이내입니다.");

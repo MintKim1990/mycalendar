@@ -67,7 +67,7 @@ class MemberAchievementsTest {
                 )
         );
 
-        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailPictureAchievements(
+        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailTimeAchievements(
                     memberDetailTimeAchievementsRequest
                 )
         );
@@ -143,7 +143,7 @@ class MemberAchievementsTest {
                 )
         );
 
-        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailPictureAchievements(
+        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailTimeAchievements(
                 memberDetailTimeAchievementsRequest
                 )
         );
@@ -212,7 +212,7 @@ class MemberAchievementsTest {
                 )
         );
 
-        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailPictureAchievements(
+        memberDetailAchievementsList.add(MemberDetailTimeAchievements.createMemberDetailTimeAchievements(
                 memberDetailTimeAchievementsRequest
                 )
         );
